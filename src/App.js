@@ -1,7 +1,13 @@
+import { BrowserRouter as Router, Routes , Route} from "react-router-dom";
+import Mission from "./components/mission";
 function App() {
   return (
     <div className="App">
-      <h1>Hello World</h1>
+      <Router>
+      <Routes>
+          <Route path="/mission" element={<Mission />} />
+      </Routes>
+      </Router>
     </div>
   );
 }
