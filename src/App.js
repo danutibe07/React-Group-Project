@@ -1,16 +1,16 @@
-import { BrowserRouter as Router, Routes , Route} from "react-router-dom";
-import Mission from "./components/mission";
-import Header from "./components/header";
+import { Outlet } from 'react-router-dom';
+import Header from './components/Header';
+
 function App() {
   return (
-    <div className="App">
-      <Router>
+    <>
+      <div className="nav-bar">
         <Header />
-      <Routes>
-          <Route path="/mission" element={<Mission />} />
-      </Routes>
-      </Router>
-    </div>
+      </div>
+      <main className="container">
+        <Outlet />
+      </main>
+    </>
   );
 }
 
