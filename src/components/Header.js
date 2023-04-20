@@ -7,7 +7,7 @@ const Header = () => {
   const links = [
     {
       id: 1,
-      path: '/',
+      path: '/rockets',
       text: 'Rockets',
     },
     {
