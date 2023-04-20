@@ -1,0 +1,54 @@
+.rocketContainer {
+    display: flex;
+    justify-items: center;
+    gap: 10px;
+    height: auto;
+    padding: 2% 3%;
+  }
+  
+  .image {
+    width: 30%;
+  }
+  
+  .image img {
+    width: 100%;
+    height: inherit;
+  }
+  
+  .rocketName {
+    font-size: 1.4rem;
+    margin: 5px 0;
+  }
+  
+  .rocketDescription {
+    font-size: 1.19rem;
+  }
+  
+  .reserve {
+    background: #007bff;
+    border-radius: 5px;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
+    margin-top: 0.9rem;
+  }
+  
+  .content {
+    width: 70%;
+  }
+  
+  @media (max-width: 800px) {
+    .rocketContainer {
+      height: auto;
+    }
+  
+    .image {
+      width: 40%;
+    }
+  
+    .content {
+      width: 60%;
+    }
+  }
