@@ -1,8 +1,8 @@
 import axios from 'axios';
-import { createAsyncThunk } from '@reduxjs/toolkit'
+import { createAsyncThunk } from '@reduxjs/toolkit';
 
 const GET_ROCKETS = 'Rockets/Rockets/GET_ROCKETS';
-const url = 'https://api.spacexdata.com/v4/rockets';
+const url = 'https://api.spacexdata.com/v3/rockets';
 
 const getData = async () => {
   try {
@@ -15,7 +15,6 @@ const getData = async () => {
 
 const initialState = {
   rockets: [],
-  isLoading: false,
 };
 
 const rocketReducer = (state = initialState, action) => {
@@ -35,7 +34,7 @@ export const getRockets = createAsyncThunk(GET_ROCKETS, async () => {
   const rockets = [];
 
   data.forEach((data) => {
-    data.push(data);
+    rockets.push(data);
   });
   return rockets;
 });
