@@ -23,21 +23,21 @@ body {
   padding: 0;
 }
 
-nav {
-  display: flex;
-  width: 100%;
-  gap: 1em;
-  align-items: center;
-}
-
-.nav-bar {
-  padding: 24px 4%;
+header {
+  padding: 20px 4%;
   background-color: #fff;
   border-bottom: 1px solid #e8e8e8;
   display: flex;
   align-items: center;
   grid-gap: 40px;
   gap: 40px;
+}
+
+nav {
+  display: flex;
+  width: 100%;
+  gap: 1em;
+  align-items: center;
 }
 
 .logo {
@@ -63,8 +63,8 @@ nav {
   margin-right: 0;
 }
 
-.nav-link {
-  opacity: 0.5;
+.nav-links li a {
+  opacity: 0.7;
   font-family: "Montserrat", sans-serif;
   font-size: 1.09rem;
   color: #0290ff;
@@ -74,9 +74,9 @@ nav {
   text-decoration: none;
 }
 
-.active-link {
+.nav-links li a.active {
   opacity: 1;
-  font-weight: 900;
+  font-weight: 700;
   text-decoration: underline;
 }
 
@@ -85,7 +85,7 @@ nav {
 }
 
 .container {
-  padding: 1.5%;
+  padding: 2%;
 }
 
 @media (max-width: 850px) {
