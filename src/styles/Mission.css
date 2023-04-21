@@ -10,7 +10,7 @@
   vertical-align: middle;
 }
 
-.btns-i{
+.btns-i {
   outline: none;
   color: #6d757d;
   border: 1px solid #6d757d;
@@ -18,7 +18,7 @@
   border-radius: 2px;
 }
 
-.btns-red{
+.btns-red {
   outline: none;
   color: #dc3645;
   border: 1px solid #dc3645;
@@ -26,16 +26,16 @@
   border-radius: 2px;
 }
 
-.member-txt{
+.member-txt {
   background-color: #18a2b8;
-  color: #ffffff;
+  color: #fff;
   padding: 5px;
   border-radius: 2px;
 }
 
-.notamember-txt{
+.notamember-txt {
   background-color: #6d757d;
-  color: #ffffff;
+  color: #fff;
   padding: 5px;
   border-radius: 2px;
 }
