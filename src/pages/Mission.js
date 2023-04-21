@@ -13,15 +13,15 @@ const Mission = ({
       <td className="heading col-lg-7">{description}</td>
       <td className="btns">
         {reserved ? (
-          <span className="badge text-bg-primary">Active Member</span>
-        ) : (<span className="badge sip text-bg-secondary">Not A Member</span>
+          <span className="member-txt">Active Member</span>
+        ) : (<span className="notamember-txt">NOT A MEMBER</span>
         )}
       </td>
       <td className="btns">
         {reserved ? (
           <button
             type="button"
-            className="btn btn-outline-danger btn-sm"
+            className="btns-red"
             onClick={() => dispatch(leaveMission(id))}
           >
             Leave Mission
@@ -29,7 +29,7 @@ const Mission = ({
         ) : (
           <button
             type="button"
-            className="btn btn-outline-secondary test-small btn-sm"
+            className="btns-i"
             onClick={() => dispatch(joinMission(id))}
           >
             Join Mission
