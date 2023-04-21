@@ -1,48 +1,39 @@
-import {
-  BrowserRouter, Route, Routes, Navigate,
-} from 'react-router-dom';
-import Header from './components/Header';
-import Rocket from './pages/Rocket';
-import Mission from './pages/Mission';
-import Profile from './pages/Profile';
-import Error from './components/Error';
+import React from 'react';
+import { NavLink, Outlet } from 'react-router-dom';
+import logo from './assets/planet.png';
 
-function App() {
-  return (
-    <BrowserRouter>
-      <div className="nav-bar">
-        <Header />
-      </div>
-      <div className="container">
-        <Routes>
-          <Route
-            exact
-            path="/"
-            element={<Navigate to="/rockets" replace />}
-          />
-          <Route
-            path="/rockets"
-            element={<Rocket />}
-            exact
-          />
-          <Route
-            path="/missions"
-            element={<Mission />}
-            exact
-          />
-          <Route
-            path="/profile"
-            element={<Profile />}
-            exact
-          />
-          <Route
-            path="*"
-            element={<Error />}
-          />
-        </Routes>
-      </div>
-    </BrowserRouter>
-  );
-}
+const App = () => (
+  <>
+    <header>
+      <nav>
+        <div className="logo">
+          {' '}
+          <span className="icon-button">
+            <img src={logo} alt="logo" style={{ width: '3.5em', height: '3.5em' }} />
+          </span>
+          <span className="nav-brand">
+            Space Travelers&apos; Hub
+          </span>
+        </div>
+
+        <ul className="nav-links">
+          <li>
+            <NavLink to="/">Rockets</NavLink>
+          </li>
+          <li>
+            <NavLink to="/missions">Missions</NavLink>
+          </li>
+          |
+          <li>
+            <NavLink to="/profile">My Profile</NavLink>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main className="container">
+      <Outlet />
+    </main>
+  </>
+);
 
 export default App;

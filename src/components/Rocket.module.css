@@ -35,6 +35,29 @@
   margin-top: 0.9rem;
 }
 
+.cancel {
+  background: rgb(240, 240, 240);
+  border-radius: 5px;
+  color: rgb(45, 51, 56);
+  padding: 0.5rem;
+  border: 1px solid rgb(45, 51, 56);
+  outline: none;
+  font-size: 1.15rem;
+  margin-top: 0.9rem;
+  margin-left: 0.5rem;
+}
+
+.badges {
+  background: rgb(37, 162, 183);
+  display: inline-block;
+  border-radius: 5px;
+  color: white;
+  padding: 0.3rem;
+  border: none;
+  font-size: 0.899rem;
+  margin: 0.4rem 0.4rem 0.4rem 1.1rem;
+}
+
 .content {
   width: 70%;
 }
