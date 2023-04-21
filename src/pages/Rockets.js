@@ -4,9 +4,9 @@ import { getRocketsData } from '../redux/rockets/rocketSlice';
 import Rocket from '../components/Rocket';
 
 const Rockets = () => {
-  const {
-    rockets, hasError, isFetched,
-  } = useSelector((store) => store.rockets);
+  const { rockets, hasError, isFetched } = useSelector(
+    (store) => store.rockets,
+  );
   const dispatch = useDispatch();
 
   useEffect(() => {
