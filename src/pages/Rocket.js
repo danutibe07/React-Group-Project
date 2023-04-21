@@ -1,30 +1,24 @@
 import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { getRockets } from '../redux/rockets/rocketSlice';
-import style from '../components/Rocket.module.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { getRocketsData } from '../redux/rockets/rocketSlice';
+import Rocket from '../components/Rockets';
 
-const Rocket = () => {
-  const { rockets } = useSelector((state) => state.rockets);
+const Rockets = () => {
+  const {
+    rockets, hasError, isFetched,
+  } = useSelector((store) => store.rockets);
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getRockets());
-  }, [dispatch]);
 
-  return (
-    rockets.map((rocket) => (
-      <section key={rocket.id} className={style.rocketContainer}>
-        <div className={style.image}>
-          <img src={rocket.flickr_images[0]} alt="rocket" />
-        </div>
-        <div className={style.content}>
-          {' '}
-          <h2 className={style.rocketName}>{rocket.rocket_name}</h2>
-          <p className={style.rocketDescription}>{rocket.description}</p>
-          <button type="button" className={style.reserve}>Reserve Rocket</button>
-        </div>
-      </section>
-    ))
-  );
+  useEffect(() => {
+    if (rockets.length === 0) {
+      dispatch(getRocketsData());
+    }
+  }, [dispatch, isFetched, rockets.length]);
+
+  if (hasError) return <h2>An error has occurred</h2>;
+  if (rockets.length === 0) return <h2>No Rockets exist</h2>;
+
+  return rockets.map((rocket) => <Rocket key={rocket.id} rocket={rocket} />);
 };
 
-export default Rocket;
+export default Rockets;
