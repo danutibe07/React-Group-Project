@@ -1,29 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import './index.css';
 import App from './App';
-import Rocket from './pages/Rocket';
-import Mission from './pages/Mission';
-import Profile from './pages/Profile';
-import Error from './components/Error';
-
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <App />,
-    children: [
-      { path: '/', element: <Rocket /> },
-      { path: 'missions', element: <Mission /> },
-      { path: 'profile', element: <Profile /> },
-      { path: '*', element: <Error /> },
-    ],
-  },
-]);
+import store from './redux/store';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
 );
