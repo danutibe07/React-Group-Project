@@ -1,5 +1,4 @@
 import Myprofile from '../pages/Myprofile';
-import ProfileMission from '../pages/Myprofile';
 
 describe('Testing the profile', () => {
   const component = (
